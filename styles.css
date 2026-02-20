@@ -1,0 +1,540 @@
+.tab-lang-combo {
+    margin-left: 32px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.tab-lang-combo .lang-combo {
+    margin-top: 0;
+    margin-bottom: 0;
+    min-width: 5px;
+}
+
+/* Top Navigation Tabs */
+.top-tabs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: rgba(18, 11, 63, 0.98);
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    z-index: 300;
+    padding: 0 0 0 0;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    height: 53px;
+    align-items: center;
+}
+
+.tab-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.08rem;
+    font-weight: 600;
+    padding: 12px 24px 10px 24px;
+    border-radius: 8px 8px 0 0;
+    transition: background 0.2s, color 0.2s;
+    letter-spacing: 0.5px;
+    position: relative;
+    top: 0px;
+}
+
+.tab-link:hover,
+.tab-link.active {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+    color: #ffffff;
+}
+
+.banner,
+.servicios,
+.sobre-nosotros,
+.contacto {
+    margin-top: 56px;
+}
+
+.language-selector-fixed {
+    position: fixed;
+    top: 24px;
+    right: 32px;
+    z-index: 200;
+}
+
+/* Reset básico */
+.home-rating {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.home-rating>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rating-text {
+    margin-bottom: 10px;
+    font-size: 1.08rem;
+    color: #00FFD1;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+:root {
+    --color-primary: #050020;
+    --color-secondary: #120b3f;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background: var(--color-primary);
+    color: #f5f5f5;
+    overflow-x: hidden;
+}
+
+/* Language Selector */
+
+.banner-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 30px;
+}
+
+.lang-combo {
+    padding: 10px 18px;
+    background: var(--color-primary);
+    border: 1px solid rgb(65, 65, 65);
+    color: #ffffff;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.3s, background 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    min-width: 120px;
+    appearance: none;
+}
+
+.lang-combo:focus {
+    border: 1.5px solid #120b3f;
+    background: var(--color-primary);
+    color: #fafafa;
+}
+
+/* Banner Principal */
+.banner {
+    background: var(--color-primary);
+    position: relative;
+    padding: 100px 40px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.tab-link::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 5px;
+    background: linear-gradient(#fff, #120b3f 80%);
+    border-radius: 1px;
+    width: 0;
+    transform: translateX(-50%);
+    transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-link:hover::after,
+.tab-link.active::after {
+    filter: drop-shadow(0 0 90px rgba(255, 255, 255, 0.6));
+    width: calc(100% - 48px);
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: moveBg 20s linear infinite;
+    pointer-events: none;
+    filter: drop-shadow(0 0 90px rgba(255, 255, 255, 0.6));
+}
+
+@keyframes moveBg {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+.banner-content {
+    max-width: 900px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    animation: slideInDown 1s ease-out;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.banner-logo {
+    max-width: 400px;
+    height: auto;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    border-radius: 0;
+    animation: scaleIn 2.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    filter: contrast(1.3) brightness(1.15) drop-shadow(0 0 90px rgba(255, 255, 255, 0.6));
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.banner h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.banner p {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 50px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.banner .btn {
+    display: inline-block;
+    background: #fff;
+    color: #000;
+    padding: 16px 48px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: left 0.4s ease;
+}
+
+.banner .btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 20px 60px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.banner .btn:hover::before {
+    left: 100%;
+}
+
+/* Servicios */
+.servicios {
+    padding: 120px 40px;
+    background: var(--color-primary);
+    position: relative;
+}
+
+.servicios::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.servicios h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 80px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    text-align: center;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 50px 40px;
+    border-radius: 0;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: left;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+
+    transition: left 0.6s ease;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #bdbdbd;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-8px);
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+.card:hover::after {
+    width: 100%;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.8;
+}
+
+/* Sobre nosotros */
+.sobre-nosotros {
+    background: var(--color-primary);
+    padding: 120px 40px;
+    text-align: center;
+    position: relative;
+}
+
+.sobre-nosotros::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.sobre-nosotros h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.sobre-nosotros p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1rem;
+    line-height: 1.9;
+    font-weight: 300;
+}
+
+/* Contacto */
+.contacto {
+    padding: 120px 40px;
+    background: var(--color-primary);
+    position: relative;
+}
+
+.contacto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.contacto h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.contacto form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contacto form input,
+.contacto form textarea {
+    width: 100%;
+    padding: 18px 20px;
+    margin: 15px 0;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contacto form input::placeholder,
+.contacto form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.contacto form input:focus,
+.contacto form textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+}
+
+.contacto form textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.contacto button {
+    width: 100%;
+    padding: 18px 40px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 20px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+.contacto button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    transition: left 0.4s ease;
+}
+
+.contacto button:hover {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 20px 60px rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.contacto button:hover::before {
+    left: 100%;
+}
+
+/* Footer */
+footer {
+    background: var(--color-primary);
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    letter-spacing: 0.5px;
+}
