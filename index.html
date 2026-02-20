@@ -10,21 +10,40 @@
 </head>
 
 <body>
-
-
-
     <nav class="top-tabs">
-        <a href="#home" class="tab-link" data-es="Inicio" data-en="Home">Inicio</a>
-        <a href="#catalogo" class="tab-link" data-es="Catálogo de Servicios" data-en="Service Catalog">Catálogo de
-            Servicios</a>
-        <a href="#quienes" class="tab-link" data-es="Quiénes Somos" data-en="About Us">Quiénes Somos</a>
-        <a href="#contacto" class="tab-link" data-es="Contacto" data-en="Contact">Contacto</a>
-        <span class="tab-lang-combo">
-            <select id="lang-combo" class="lang-combo" aria-label="Seleccionar idioma">
-                <option value="es">Español</option>
-                <option value="en">English</option>
-            </select>
-        </span>
+        <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+            <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+        </button>
+
+        <div class="top-title" data-es="XMartcom" data-en="XMartcom">XMartcom</div>
+
+        <div class="tabs-inner">
+            <a href="#home" class="tab-link" data-es="Inicio" data-en="Home">Inicio</a>
+            <a href="#catalogo" class="tab-link" data-es="Catálogo de Servicios" data-en="Service Catalog">Catálogo de
+                Servicios</a>
+            <a href="#quienes" class="tab-link" data-es="Quiénes Somos" data-en="About Us">Quiénes Somos</a>
+            <a href="#contacto" class="tab-link" data-es="Contacto" data-en="Contact">Contacto</a>
+            <span class="tab-lang-combo">
+                <select id="lang-combo" class="lang-combo" aria-label="Seleccionar idioma">
+                    <option value="es">Español</option>
+                    <option value="en">English</option>
+                </select>
+            </span>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu" hidden>
+            <a href="#home" class="tab-link" data-es="Inicio" data-en="Home">Inicio</a>
+            <a href="#catalogo" class="tab-link" data-es="Catálogo de Servicios" data-en="Service Catalog">Catálogo de
+                Servicios</a>
+            <a href="#quienes" class="tab-link" data-es="Quiénes Somos" data-en="About Us">Quiénes Somos</a>
+            <a href="#contacto" class="tab-link" data-es="Contacto" data-en="Contact">Contacto</a>
+            <span class="tab-lang-combo">
+                <select id="lang-combo-mobile" class="lang-combo" aria-label="Seleccionar idioma">
+                    <option value="es">Español</option>
+                    <option value="en">English</option>
+                </select>
+            </span>
+        </div>
     </nav>
 
     <header class="banner" id="home">

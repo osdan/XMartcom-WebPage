@@ -1,5 +1,5 @@
 .tab-lang-combo {
-    margin-left: 32px;
+    margin-left: 8px;
     display: flex;
     align-items: center;
     height: 100%;
@@ -11,25 +11,112 @@
     min-width: 5px;
 }
 
+/* container for tabs to keep items inline */
+.tabs-inner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
 /* Top Navigation Tabs */
 .top-tabs {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
-    width: 100vw;
-    background: rgba(18, 11, 63, 0.98);
+    width: 100%;
+    background: rgba(18, 11, 63, 0.9);
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 32px;
     z-index: 300;
-    padding: 0 0 0 0;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
     height: 53px;
+}
+
+/* Hamburger button (hidden on desktop) */
+.hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 16px;
+    padding: 8px;
+    color: #fff;
+}
+.hamburger-box {
+    display: inline-block;
+    width: 28px;
+    height: 18px;
+    position: relative;
+}
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.hamburger-inner { top: 50%; transform: translateY(-50%); }
+.hamburger-inner::before { content: ''; top: -8px; }
+.hamburger-inner::after { content: ''; top: 8px; }
+
+/* Mobile menu (hidden by default) */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 53px;
+    left: 0;
+    right: 0;
+    background: rgba(18, 11, 63, 0.98);
+    padding: 16px;
+    z-index: 290;
+    flex-direction: column;
+    gap: 8px;
     align-items: center;
+}
+.mobile-menu.open {
+    display: flex;
+}
+
+/* Top centered title inside .top-tabs */
+.top-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #00FFD1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 305;
+    pointer-events: none;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .top-title { display: block; }
+}
+
+@media (max-width: 480px) {
+    .top-title { font-size: 0.95rem; }
+}
+
+/* On small screens hide the normal tabs and show hamburger */
+@media (max-width: 768px) {
+    .tabs-inner { display: none; }
+    .hamburger { display: inline-block; }
+    .top-tabs { justify-content: flex-start; padding: 0 12px; }
+    .tab-link { padding: 10px 12px; font-size: 1rem; }
+    .tab-lang-combo { margin-left: 0; }
 }
 
 .tab-link {
-    color: #fff;
+    color: #ffffff9d;
     text-decoration: none;
     font-size: 1.08rem;
     font-weight: 600;
@@ -43,7 +130,7 @@
 
 .tab-link:hover,
 .tab-link.active {
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
     transition: left 0.6s ease;
     color: #ffffff;
 }
@@ -109,7 +196,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 32px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .lang-combo {
@@ -161,7 +248,7 @@ body {
 
 .tab-link:hover::after,
 .tab-link.active::after {
-    filter: drop-shadow(0 0 90px rgba(255, 255, 255, 0.6));
+    filter: drop-shadow(0 0 90px rgb(255, 255, 255));
     width: calc(100% - 48px);
 }
 
@@ -537,4 +624,70 @@ footer {
     font-size: 0.85rem;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     letter-spacing: 0.5px;
+}
+
+/* ------------------------------
+   Responsive helpers (global)
+   ------------------------------ */
+
+/* Scale base font for different viewports */
+html {
+    font-size: clamp(14px, 1.2vw + 12px, 18px);
+}
+
+/* Ensure images scale */
+img, .banner-logo {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Make top bar padding adapt on small screens */
+.top-tabs {
+    padding: 0 16px;
+}
+
+/* Banner responsive spacing and typography */
+.banner {
+    padding: clamp(40px, 8vw, 100px);
+    min-height: 60vh;
+}
+.banner h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+}
+.banner p {
+    font-size: clamp(1rem, 2.2vw, 1.3rem);
+}
+
+/* Cards & layout adjustments */
+.cards-container {
+    gap: clamp(16px, 2.5vw, 40px);
+    padding: 0 12px;
+}
+.card {
+    padding: clamp(20px, 3vw, 50px);
+}
+
+/* Forms: full width on small screens */
+.contacto form {
+    padding: 0 12px;
+}
+
+/* Reduce spacing in sections on small devices */
+@media (max-width: 900px) {
+    .banner { padding-top: 60px; padding-bottom: 40px; }
+    .servicios, .sobre-nosotros, .contacto { padding: 60px 20px; }
+}
+
+/* Adjust tab link sizes and top-title for small devices */
+@media (max-width: 768px) {
+    .tab-link { padding: 10px 10px; font-size: 0.98rem; }
+    .tab-lang-combo .lang-combo { min-width: 96px; }
+    .top-title { display: block; }
+}
+
+@media (max-width: 480px) {
+    .hamburger-box { width: 24px; height: 14px; }
+    .hamburger-inner::before { top: -6px; }
+    .hamburger-inner::after { top: 6px; }
+    .banner h1 { line-height: 1.05; }
 }

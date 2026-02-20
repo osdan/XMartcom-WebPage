@@ -13,6 +13,46 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('language', currentLang);
         });
     }
+    // Sync mobile language selector if present
+    const langComboMobile = document.getElementById('lang-combo-mobile');
+    if (langComboMobile) {
+        langComboMobile.value = currentLang;
+        langComboMobile.addEventListener('change', function() {
+            currentLang = this.value;
+            // update both selectors and saved language
+            setLanguage(currentLang);
+            const desktop = document.getElementById('lang-combo');
+            if (desktop) desktop.value = currentLang;
+            localStorage.setItem('language', currentLang);
+        });
+    }
+
+    // Hamburger / mobile menu behavior
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function() {
+            const isOpen = mobileMenu.classList.toggle('open');
+            this.setAttribute('aria-expanded', isOpen);
+            if (isOpen) {
+                mobileMenu.removeAttribute('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.setAttribute('hidden', '');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a.tab-link').forEach(a => {
+            a.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                mobileMenu.setAttribute('hidden', '');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+    }
 });
 
 // Función para cambiar el idioma
