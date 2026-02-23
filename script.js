@@ -9,7 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
         langCombo.value = currentLang;
         langCombo.addEventListener('change', function() {
             currentLang = this.value;
+            // update mobile selector and saved language
             setLanguage(currentLang);
+            const mobile = document.getElementById('lang-combo-mobile');
+            if (mobile) mobile.value = currentLang;
             localStorage.setItem('language', currentLang);
         });
     }
@@ -28,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Hamburger / mobile menu behavior
-    const hamburger = document.querySelector('.hamburger');
+    const hamburger = document.querySelector('.navbar__hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
     if (hamburger && mobileMenu) {
         hamburger.addEventListener('click', function() {
@@ -44,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Close mobile menu when a link is clicked
-        mobileMenu.querySelectorAll('a.tab-link').forEach(a => {
+        mobileMenu.querySelectorAll('a.navbar__link').forEach(a => {
             a.addEventListener('click', () => {
                 mobileMenu.classList.remove('open');
                 mobileMenu.setAttribute('hidden', '');

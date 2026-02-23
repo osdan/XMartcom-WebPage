@@ -4,140 +4,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XMartcom</title>
+    <title>XMartcom | Consultoría en Tecnología</title>
     <link rel="icon" type="image/png" href="images/head/icono.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <nav class="top-tabs">
-        <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
-            <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+
+    <nav class="navbar">
+        <button class="navbar__hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+            <span class="navbar__hamburger-box"><span class="navbar__hamburger-inner"></span></span>
         </button>
 
-        <div class="top-title" data-es="XMartcom" data-en="XMartcom">XMartcom</div>
+        <div class="navbar__title">XMartcom</div>
 
-        <div class="tabs-inner">
-            <a href="#home" class="tab-link" data-es="Inicio" data-en="Home">Inicio</a>
-            <a href="#catalogo" class="tab-link" data-es="Catálogo de Servicios" data-en="Service Catalog">Catálogo de
-                Servicios</a>
-            <a href="#quienes" class="tab-link" data-es="Quiénes Somos" data-en="About Us">Quiénes Somos</a>
-            <a href="#contacto" class="tab-link" data-es="Contacto" data-en="Contact">Contacto</a>
-            <span class="tab-lang-combo">
-                <select id="lang-combo" class="lang-combo" aria-label="Seleccionar idioma">
-                    <option value="es">Español</option>
-                    <option value="en">English</option>
-                </select>
-            </span>
+        <div class="navbar__menu">
+            <a href="#home" class="navbar__link" data-es="Inicio" data-en="Home">Inicio</a>
+            <a href="#especializacion" class="navbar__link" data-es="Tecnología" data-en="Technology">Áreas de Especialización</a>
+            <a href="#firma" class="navbar__link" data-es="Nuestra Firma" data-en="Our Firm">Nuestra Firma</a>
+            <a href="#contacto" class="navbar__link" data-es="Contacto" data-en="Contact">Contacto</a>
         </div>
 
-        <div id="mobile-menu" class="mobile-menu" hidden>
-            <a href="#home" class="tab-link" data-es="Inicio" data-en="Home">Inicio</a>
-            <a href="#catalogo" class="tab-link" data-es="Catálogo de Servicios" data-en="Service Catalog">Catálogo de
-                Servicios</a>
-            <a href="#quienes" class="tab-link" data-es="Quiénes Somos" data-en="About Us">Quiénes Somos</a>
-            <a href="#contacto" class="tab-link" data-es="Contacto" data-en="Contact">Contacto</a>
-            <span class="tab-lang-combo">
-                <select id="lang-combo-mobile" class="lang-combo" aria-label="Seleccionar idioma">
-                    <option value="es">Español</option>
-                    <option value="en">English</option>
-                </select>
-            </span>
+        <div class="language-selector">
+            <select id="lang-combo" class="language-selector__select">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+
+        <div id="mobile-menu" class="navbar__mobile-menu" hidden>
+            <a href="#home" class="navbar__link" data-es="Inicio" data-en="Home">Inicio</a>
+            <a href="#especializacion" class="navbar__link" data-es="Áreas de Especialización" data-en="Specialization Areas">Áreas de Especialización</a>
+            <a href="#firma" class="navbar__link" data-es="Nuestra Firma" data-en="Our Firm">Nuestra Firma</a>
+            <a href="#contacto" class="navbar__link" data-es="Contacto" data-en="Contact">Contacto</a>
+            <select id="lang-combo-mobile" class="language-selector__select">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+            </select>
         </div>
     </nav>
 
-    <header class="banner" id="home">
-        <div class="banner-content">
-            <img src="images/head/logo xmartcom sin fondo.png" alt="XMartCom Logo" class="banner-logo">
+    <!-- HERO -->
+    <header class="hero" id="home">
+        <div class="hero__content">
+            <img src="images/head/logo xmartcom sin fondo.png" alt="XMartcom Logo" class="hero__logo">
 
-            <h1 data-es="Reparación y Soporte Profesional" data-en="Professional Repair and Support">Reparación y
-                Soporte Profesional</h1>
-            <p data-es="Soluciones confiables para tus dispositivos" data-en="Reliable solutions for your devices">
-                Soluciones confiables para tus dispositivos</p>
-            <div class="home-rating">
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                    <div class="rating-stars"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                            viewBox="0 0 24 24" fill="#00FFD1" stroke="#00FFD1" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" class="lucide lucide-star" aria-hidden="true">
-                            <path
-                                d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
-                            </path>
-                        </svg><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="#00FFD1" stroke="#00FFD1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-star" aria-hidden="true">
-                            <path
-                                d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
-                            </path>
-                        </svg><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="#00FFD1" stroke="#00FFD1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-star" aria-hidden="true">
-                            <path
-                                d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
-                            </path>
-                        </svg><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="#00FFD1" stroke="#00FFD1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-star" aria-hidden="true">
-                            <path
-                                d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
-                            </path>
-                        </svg><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="#00FFD1" stroke="#00FFD1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-star" aria-hidden="true">
-                            <path
-                                d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
-                            </path>
-                        </svg></div>
-                    <span class="rating-text">5.0 • 42 Reseñas</span>
-                </div>
-            </div>
-            <a href="#contacto" class="btn" data-es="Contáctanos" data-en="Contact Us">Contáctanos</a>
+            <h1 class="hero__title" data-es="Consultoría Estratégica en Tecnología" data-en="Strategic Technology Consulting">Consultoría Estratégica en Tecnología</h1>
+
+            <p class="hero__description" data-es="Impulsamos la transformación digital, la optimización operativa y la seguridad tecnológica de tu empresa mediante soluciones estratégicas en TI." data-en="We drive digital transformation, operational optimization and technological security of your company through strategic IT solutions.">
+                Impulsamos la transformación digital, la optimización operativa y la seguridad tecnológica
+                de tu empresa mediante soluciones estratégicas en TI.
+            </p>
+
+            <a href="#contacto" class="btn btn--primary" data-es="Agendar Consultoría" data-en="Schedule Consultation">Agendar Consultoría</a>
         </div>
     </header>
 
-    <section class="servicios" id="catalogo">
-        <h2 data-es="Nuestros Servicios" data-en="Our Services">Nuestros Servicios</h2>
-        <div class="cards-container">
+    <!-- PROPUESTA DE VALOR -->
+    <section class="value-prop">
+        <h2 class="value-prop__title" data-es="Generamos Valor Medible" data-en="We Generate Measurable Value">Generamos Valor Medible</h2>
+        <p class="value-prop__description" data-es="Nuestro enfoque combina estrategia, tecnología y ejecución para garantizar resultados tangibles, reducción de riesgos y crecimiento sostenible en cada proyecto." data-en="Our approach combines strategy, technology and execution to ensure tangible results, risk reduction and sustainable growth in each project.">
+            Nuestro enfoque combina estrategia, tecnología y ejecución para garantizar resultados tangibles,
+            reducción de riesgos y crecimiento sostenible en cada proyecto.
+        </p>
+    </section>
+
+    <!-- ÁREAS DE ESPECIALIZACIÓN -->
+    <section class="services" id="especializacion">
+        <h2 class="services__title" data-es="Áreas de Especialización" data-en="Specialization Areas">Áreas de Especialización</h2>
+
+        <div class="services__grid">
+
             <div class="card">
-                <h3 data-es="Servicio 1" data-en="Service 1">Servicio 1</h3>
-                <p data-es="Descripción corta del servicio." data-en="Short service description.">Descripción corta del
-                    servicio.</p>
+                <h3 class="card__title" data-es="Soporte TI Empresarial" data-en="Enterprise IT Support">Soporte TI Empresarial</h3>
+                <p class="card__description" data-es="Gestión estratégica de infraestructura tecnológica para garantizar continuidad operativa, reducción de incidentes y mayor eficiencia organizacional." data-en="Strategic management of technological infrastructure to ensure operational continuity, incident reduction and greater organizational efficiency.">
+                    Gestión estratégica de infraestructura tecnológica para garantizar continuidad operativa,
+                    reducción de incidentes y mayor eficiencia organizacional.
+                </p>
             </div>
+
             <div class="card">
-                <h3 data-es="Servicio 2" data-en="Service 2">Servicio 2</h3>
-                <p data-es="Descripción corta del servicio." data-en="Short service description.">Descripción corta del
-                    servicio.</p>
+                <h3 class="card__title" data-es="Transformación Digital" data-en="Digital Transformation">Transformación Digital</h3>
+                <p class="card__description" data-es="Modernización y optimización de procesos empresariales mediante soluciones tecnológicas escalables y adaptadas a cada organización." data-en="Modernization and optimization of business processes through scalable technological solutions adapted to each organization.">
+                    Modernización y optimización de procesos empresariales mediante soluciones tecnológicas
+                    escalables y adaptadas a cada organización.
+                </p>
             </div>
+
             <div class="card">
-                <h3 data-es="Servicio 3" data-en="Service 3">Servicio 3</h3>
-                <p data-es="Descripción corta del servicio." data-en="Short service description.">Descripción corta del
-                    servicio.</p>
+                <h3 class="card__title" data-es="Ciberseguridad Empresarial" data-en="Enterprise Cybersecurity">Ciberseguridad Empresarial</h3>
+                <p class="card__description" data-es="Evaluación de riesgos, fortalecimiento de sistemas y protección integral de la información crítica de la empresa." data-en="Risk assessment, system strengthening and comprehensive protection of critical company information.">
+                    Evaluación de riesgos, fortalecimiento de sistemas y protección integral de la información
+                    crítica de la empresa.
+                </p>
             </div>
+
+            <div class="card">
+                <h3 class="card__title" data-es="Ingeniería de Calidad de Software" data-en="Software Quality Engineering">Ingeniería de Calidad de Software</h3>
+                <p class="card__description" data-es="Diseño e implementación de estrategias integrales de aseguramiento de calidad, incluyendo testing funcional, automatización, pruebas de rendimiento y mejora continua para garantizar productos robustos y escalables." data-en="Design and implementation of comprehensive quality assurance strategies, including functional testing, automation, performance testing and continuous improvement to ensure robust and scalable products.">
+                    Diseño e implementación de estrategias integrales de aseguramiento de calidad,
+                    incluyendo testing funcional, automatización, pruebas de rendimiento y mejora
+                    continua para garantizar productos robustos y escalables.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3 class="card__title" data-es="Consultoría en Infraestructura" data-en="Infrastructure Consulting">Consultoría en Infraestructura</h3>
+                <p class="card__description" data-es="Diseño, implementación y optimización de entornos tecnológicos alineados a objetivos estratégicos de negocio." data-en="Design, implementation and optimization of technological environments aligned with strategic business objectives.">
+                    Diseño, implementación y optimización de entornos tecnológicos alineados
+                    a objetivos estratégicos de negocio.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3 class="card__title" data-es="Optimización de Procesos TI" data-en="IT Process Optimization">Optimización de Procesos TI</h3>
+                <p class="card__description" data-es="Análisis y mejora de procesos tecnológicos para aumentar eficiencia, reducir costos y fortalecer la gobernanza de TI." data-en="Analysis and improvement of technological processes to increase efficiency, reduce costs and strengthen IT governance.">
+                    Análisis y mejora de procesos tecnológicos para aumentar eficiencia,
+                    reducir costos y fortalecer la gobernanza de TI.
+                </p>
+            </div>
+
         </div>
     </section>
 
-    <section class="sobre-nosotros" id="quienes">
-        <h2 data-es="Sobre Nosotros" data-en="About Us">Sobre Nosotros</h2>
-        <p data-es="Somos expertos en reparación y soporte técnico con años de experiencia ayudando a nuestros clientes."
-            data-en="We are experts in repair and technical support with years of experience helping our clients.">Somos
-            expertos en reparación y soporte técnico con años de experiencia ayudando a nuestros clientes.</p>
+    <!-- NUESTRA FIRMA -->
+    <section class="about" id="firma">
+        <h2 class="about__title" data-es="Nuestra Firma" data-en="Our Firm">Nuestra Firma</h2>
+        <p class="about__description" data-es="XMartcom es una firma de consultoría tecnológica enfocada en impulsar la eficiencia operativa, la innovación empresarial y la seguridad digital. Trabajamos como socios estratégicos de nuestros clientes para generar soluciones de alto impacto." data-en="XMartcom is a technology consulting firm focused on driving operational efficiency, business innovation and digital security. We work as strategic partners of our clients to generate high-impact solutions.">
+            XMartcom es una firma de consultoría tecnológica enfocada en impulsar la eficiencia operativa,
+            la innovación empresarial y la seguridad digital. Trabajamos como socios estratégicos
+            de nuestros clientes para generar soluciones de alto impacto.
+        </p>
     </section>
 
-    <section id="contacto" class="contacto">
-        <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
-        <form>
-            <input type="text" placeholder="Tu Nombre" data-es-placeholder="Tu Nombre" data-en-placeholder="Your Name"
-                required>
-            <input type="email" placeholder="Tu Correo" data-es-placeholder="Tu Correo" data-en-placeholder="Your Email"
-                required>
-            <textarea placeholder="Tu Mensaje" data-es-placeholder="Tu Mensaje"
-                data-en-placeholder="Your Message"></textarea>
-            <button type="submit" data-es="Enviar" data-en="Send">Enviar</button>
+    <!-- CONTACTO -->
+    <section id="contacto" class="contact">
+        <h2 class="contact__title" data-es="Contacto" data-en="Contact">Contacto</h2>
+        <form class="contact__form">
+            <input type="text" class="contact__input" data-es-placeholder="Nombre" data-en-placeholder="Name" placeholder="Nombre" required>
+            <input type="email" class="contact__input" data-es-placeholder="Correo Electrónico" data-en-placeholder="Email Address" placeholder="Correo Electrónico" required>
+            <textarea class="contact__textarea" data-es-placeholder="Cuéntanos sobre tu proyecto" data-en-placeholder="Tell us about your project" placeholder="Cuéntanos sobre tu proyecto"></textarea>
+            <button type="submit" class="btn btn--primary btn--block" data-es="Enviar Solicitud" data-en="Send Request">Enviar Solicitud</button>
         </form>
     </section>
 
-    <footer>
-        <p data-es="© 2026 Mi Página Web - Todos los derechos reservados"
-            data-en="© 2026 My Website - All rights reserved">© 2026 Mi Página Web - Todos los derechos reservados</p>
+    <footer class="footer">
+        <p class="footer__text" data-es="© 2026 XMartcom - Consultoría en Tecnología. Todos los derechos reservados." data-en="© 2026 XMartcom - Technology Consulting. All rights reserved.">© 2026 XMartcom - Consultoría en Tecnología. Todos los derechos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
