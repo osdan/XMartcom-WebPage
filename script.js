@@ -36,20 +36,15 @@ document.addEventListener('DOMContentLoaded', function() {
     if (hamburger && mobileMenu) {
         hamburger.addEventListener('click', function() {
             const isOpen = mobileMenu.classList.toggle('open');
+            this.classList.toggle('active', isOpen);
             this.setAttribute('aria-expanded', isOpen);
-            if (isOpen) {
-                mobileMenu.removeAttribute('hidden');
-                document.body.style.overflow = 'hidden';
-            } else {
-                mobileMenu.setAttribute('hidden', '');
-                document.body.style.overflow = '';
-            }
         });
 
         // Close mobile menu when a link is clicked
         mobileMenu.querySelectorAll('a.navbar__link').forEach(a => {
             a.addEventListener('click', () => {
                 mobileMenu.classList.remove('open');
+                hamburger.classList.remove('active');
                 mobileMenu.setAttribute('hidden', '');
                 hamburger.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';

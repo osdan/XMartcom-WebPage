@@ -117,6 +117,7 @@ html {
 }
 
 body {
+    margin: 0;
     font-family: var(--font-family-base);
     line-height: var(--line-height-relaxed);
     background: var(--color-primary);
@@ -150,18 +151,13 @@ img,
 }
 
 .navbar__title {
-    position: absolute;
-    left: 100%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    font-weight: 800;
-    color: #00FFD1;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    z-index: 305;
-    pointer-events: none;
     display: none;
+    position: absolute;
+    right: 50%;
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.95rem;
 }
 
 .navbar__menu {
@@ -255,7 +251,7 @@ img,
     align-items: center;
 }
 
-.navbar__mobile-menu.active {
+.navbar__mobile-menu.open {
     display: flex;
 }
 
